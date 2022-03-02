@@ -53,7 +53,7 @@ class GithubAuth extends GitHub
             },
             'email' => function ($attributes) {
                 if (empty($attributes['email'])) {
-                    throw new NotFoundHttpException(Yii::t('AuthFacebookModule.base', 'Please add a valid email address to your Facebook account to be able to proceed.'));
+                    throw new NotFoundHttpException(Yii::t('AuthGithubModule.base', 'Please add a valid email address to your GitHub account to be able to proceed.'));
                 }
                 return $attributes['email'];
             },
