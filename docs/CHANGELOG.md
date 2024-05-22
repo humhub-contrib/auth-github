@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.2 (May 22, 2024)
+---------------------
+- Fix: Reduced GitHub Access Scope
+
 1.0.1 (May 22, 2024)
 ---------------------
 - Fix: Serialization Problem

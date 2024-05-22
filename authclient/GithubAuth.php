@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
  */
 class GithubAuth extends GitHub
 {
+    public $scope = 'read:user';
 
     /**
      * @inheritdoc
