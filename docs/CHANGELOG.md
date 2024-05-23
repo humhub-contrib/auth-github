@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.3 (May 23, 2024)
+---------------------
+- Fix: E-Mail Lookup
+
 1.0.2 (May 22, 2024)
 ---------------------
 - Fix: Reduced GitHub Access Scope
