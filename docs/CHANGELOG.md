@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.5 (Unreleased)
+---------------------
+- Enh #4: Use PHP CS Fixer
+
 1.0.4 (May 23, 2024)
 ---------------------
 - Fix: E-Mail Lookup
