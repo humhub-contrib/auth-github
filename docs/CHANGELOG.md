@@ -1,8 +1,9 @@
 Changelog
 =========
 
-1.1.0 (Unreleased)
----------------------
+1.1.0 (August 28, 2025)
+-----------------------
+- Fix: Update module resources path
 - Enh #4: Use PHP CS Fixer
 - Enh #5: Migration to Bootstrap 5 for HumHub 1.18
 
