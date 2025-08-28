@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
  */
 class GithubAuth extends GitHub
 {
+    public $scope = 'user:email';
 
     /**
      * @inheritdoc
@@ -27,36 +28,29 @@ class GithubAuth extends GitHub
     /**
      * @inheritdoc
      */
+    protected function initUserAttributes()
+    {
+        $attributes = parent::initUserAttributes();
+
+        if (isset($attributes['name'])) {
+            $parts = mb_split(' ', $attributes['name'], 2);
+            if (isset($parts[0])) {
+                $attributes['firstname'] = $parts[0];
+            }
+            if (isset($parts[1])) {
+                $attributes['lastname'] = $parts[1];
+            }
+        }
+        return $attributes;
+    }
+
+    /**
+     * @inheritdoc
+     */
     protected function defaultNormalizeUserAttributeMap()
     {
         return [
             'username' => 'login',
-            'firstname' => function ($attributes) {
-                if (!isset($attributes['name'])) {
-                    return '';
-                }
-                $parts = mb_split(' ', $attributes['name'], 2);
-                if (isset($parts[0])) {
-                    return $parts[0];
-                }
-                return '';
-            },
-            'lastname' => function ($attributes) {
-                if (!isset($attributes['name'])) {
-                    return '';
-                }
-                $parts = mb_split(' ', $attributes['name'], 2);
-                if (isset($parts[1])) {
-                    return $parts[1];
-                }
-                return '';
-            },
-            'email' => function ($attributes) {
-                if (empty($attributes['email'])) {
-                    throw new NotFoundHttpException(Yii::t('AuthGithubModule.base', 'Please add a valid email address to your GitHub account to be able to proceed.'));
-                }
-                return $attributes['email'];
-            },
         ];
     }
 }

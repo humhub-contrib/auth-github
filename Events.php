@@ -21,7 +21,7 @@ class Events
             $authClientCollection->setClient('github', [
                 'class' => GithubAuth::class,
                 'clientId' => ConfigureForm::getInstance()->clientId,
-                'clientSecret' => ConfigureForm::getInstance()->clientSecret
+                'clientSecret' => ConfigureForm::getInstance()->clientSecret,
             ]);
         }
     }
