@@ -16,7 +16,7 @@ use humhubContrib\auth\github\models\ConfigureForm;
             <p>
                 <?= Link::primary(Yii::t('AuthGithubModule.base', 'GitHub Documentation'))
                     ->link('https://docs.github.com/en/developers/apps/creating-an-oauth-app')
-                    ->blank()
+                    ->blank()->loader(false)
                     ->right()->sm() ?>
                 <?= Yii::t('AuthGithubModule.base', 'Please follow the GitHub instructions to create the required <strong>OAuth client</strong> credentials.'); ?>
                 <br/>
