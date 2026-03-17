@@ -1,10 +1,11 @@
 <?php
-/* @var $this \humhub\components\View */
-/* @var $model \humhubContrib\auth\github\models\ConfigureForm */
 
+use humhub\widgets\bootstrap\Button;
+use humhub\widgets\bootstrap\Link;
 use humhub\widgets\form\ActiveForm;
-use yii\helpers\Html;
+use humhubContrib\auth\github\models\ConfigureForm;
 
+/* @var $model ConfigureForm */
 ?>
 <div class="container-fluid">
     <div class="panel panel-default">
@@ -13,7 +14,10 @@ use yii\helpers\Html;
 
         <div class="panel-body">
             <p>
-                <?= Html::a(Yii::t('AuthGithubModule.base', 'GitHub Documentation'), 'https://docs.github.com/en/developers/apps/creating-an-oauth-app', ['class' => 'btn btn-primary float-end btn-sm', 'target' => '_blank']); ?>
+                <?= Link::primary(Yii::t('AuthGithubModule.base', 'GitHub Documentation'))
+                    ->link('https://docs.github.com/en/developers/apps/creating-an-oauth-app')
+                    ->blank()
+                    ->right()->sm() ?>
                 <?= Yii::t('AuthGithubModule.base', 'Please follow the GitHub instructions to create the required <strong>OAuth client</strong> credentials.'); ?>
                 <br/>
             </p>
@@ -31,9 +35,7 @@ use yii\helpers\Html;
             <?= $form->field($model, 'redirectUri')->textInput(['readonly' => true]); ?>
             <br/>
 
-            <div class="mb-3">
-                <?= Html::submitButton(Yii::t('base', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => '']) ?>
-            </div>
+            <?= Button::save()->submit() ?>
 
             <?php ActiveForm::end(); ?>
 
