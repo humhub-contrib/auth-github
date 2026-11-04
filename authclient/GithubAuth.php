@@ -3,7 +3,6 @@
 namespace humhubContrib\auth\github\authclient;
 
 use yii\authclient\clients\GitHub;
-use yii\web\NotFoundHttpException;
 
 /**
  * GitHub allows authentication via GitHub OAuth.
@@ -32,15 +31,15 @@ class GithubAuth extends GitHub
     {
         $attributes = parent::initUserAttributes();
 
-        if (isset($attributes['name'])) {
-            $parts = mb_split(' ', $attributes['name'], 2);
-            if (isset($parts[0])) {
-                $attributes['firstname'] = $parts[0];
-            }
+        $name = trim((string)preg_replace('/\s+/u', ' ', (string)($attributes['name'] ?? '')));
+        if ($name !== '') {
+            $parts = explode(' ', $name, 2);
+            $attributes['firstname'] = $parts[0];
             if (isset($parts[1])) {
                 $attributes['lastname'] = $parts[1];
             }
         }
+
         return $attributes;
     }
 

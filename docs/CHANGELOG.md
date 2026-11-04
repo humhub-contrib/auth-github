@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2 (Unreleased)
+--------------------
+- Fix #8: Wrong first and last name from GitHub names with extra spaces; Allow clearing disabled settings
+
 1.1.1 (July 8, 2026)
 --------------------
 - Fix #7: Use bootstrap class to build button and link
