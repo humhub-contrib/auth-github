@@ -2,9 +2,9 @@
 
 namespace humhubContrib\auth\github\controllers;
 
-use Yii;
 use humhub\modules\admin\components\Controller;
 use humhubContrib\auth\github\models\ConfigureForm;
+use Yii;
 
 /**
  * Module configuation
