@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2.0 (Unreleased)
+--------------------
+- Enh: Update for HumHub 1.20 (Tabler icon for the GitHub login button)
+
 1.1.2 (Unreleased)
 --------------------
 - Fix #8: Wrong first and last name from GitHub names with extra spaces; Allow clearing disabled settings

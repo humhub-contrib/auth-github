@@ -19,7 +19,7 @@ class GithubAuth extends GitHub
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-github',
+            'cssIcon' => 'ti ti-brand-github',
             'buttonBackgroundColor' => '#e0492f',
         ];
     }
